@@ -333,10 +333,12 @@ public class OnboardingController extends CommonOnboarding implements DockerServ
 
 						metadataParser = new MetadataParser(localMetadataFile);
 						mData = metadataParser.getMetadata();
-
+						logger.debug("Completed metadata parsing for model:" + mData);
+						logger.debug("ownerId: " + ownerId);
 						mData.setOwnerId(ownerId);
-
+						logger.debug("checking for existing solution");
 						List<MLPSolution> solList = getExistingSolution(mData);
+						logger.debug("Existing solution list?" + solList);
 
 						boolean isListEmpty = solList.isEmpty();
 						logger.debug("has existing solution matching name?" + isListEmpty);
