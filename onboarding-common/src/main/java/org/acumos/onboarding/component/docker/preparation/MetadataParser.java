@@ -58,6 +58,8 @@ public class MetadataParser {
 			String schemafile = null;
 
 			this.metadataJson = JsonLoader.fromFile(dataFile);
+			log.debug("metadataJson {}", this.metadataJson);
+			log.debug("schema {}", metadataJson.get("schema"));
 			String schemaVersion = metadataJson.get("schema").asText();
 			logger.debug("schemaVersion: " + schemaVersion);
 
