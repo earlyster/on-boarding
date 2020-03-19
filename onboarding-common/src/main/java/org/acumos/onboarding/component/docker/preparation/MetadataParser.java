@@ -49,6 +49,9 @@ public class MetadataParser {
 	LoggerDelegate logger = new LoggerDelegate(log);
 	
 	public MetadataParser(File dataFile) throws AcumosServiceException {
+		if(dataFile == null){
+			throw new IllegalArgumentException("metadata file must be defined");
+		}
 		try {
 
 			logger.debug("::Parsing of metadata file started::");
